@@ -2,7 +2,27 @@
   bottom: 50px;
 }
 .carousel-item img {
-  height: calc(100vh - 64px);
+  height: 300px
+}
+@include smobile {
+  .carousel-item img {
+    height: 400px;
+  }
+}
+@include mobile {
+  .carousel-item img {
+    height: 500px;
+  }
+}
+@include pad {
+  .carousel-item img {
+    height: 600px;
+  }
+}
+@include desktop {
+  .carousel-item img {
+    height: calc(100vh - 64px);
+  }
 }
 // 最新消息區塊
 .home-title::after{
@@ -144,7 +164,19 @@
 .about-img-bottom {
   box-shadow: none;
 }
+.about-title span {
+  font-size: 32px;
+}
+.about-text p {
+  font-size: 24px;
+}
 @include pad {
+  .about-title span {
+    font-size: 26px;
+  }
+  .about-text p {
+    font-size: 16px;
+  }
   .about-img-top {
     margin-top: -40px;
     box-shadow: 0 0 0 8px #fff;
@@ -152,5 +184,13 @@
   .about-img-bottom {
     margin-bottom: -20px;
     box-shadow: 0 0 0 8px #fff;
+  }
+}
+@include desktop {
+  .about-title span {
+    font-size: 32px;
+  }
+  .about-text p {
+    font-size: 24px;
   }
 }

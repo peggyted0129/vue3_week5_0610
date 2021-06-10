@@ -1,38 +1,39 @@
-.navbar {
+.navbar {  // .navbar-logo
   position: fixed;
   z-index: 999;
   width: 100%;
-  background-color: transparent;
-  // ==============
-  background-color: $sgray;
-  // ==============
-  transition: all 0.2s ease-out;
+  background-color: $light;
+  transition: all .5s ease-out;
   padding-top: 1rem;
   padding-bottom: 1rem;
   &-logo {
     font-family: "Open Sans";
     transition: .3s ease-out all;
+    color: $dark;
     &:hover {
       transform: scale(1.25);
+      color: $sgreen;
     }
   }
   &-collapse {
     position: relative;
   }
   &-scroll {
-    background-color: $theme !important;
+    background-color: $theme;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     box-shadow: 0 0 20px #d2d5d8;
+    color: $white;
     & .navbar-logo {
       font-family: Kaushan Script, cursive;
       font-size: 36px;
+      color: $white;
     }
   }
   &-menu {
     opacity: 0;
     position: absolute;
-    top: 181%;
+    top: 131%;
     transition: all .8s ease;
     & li a {
       color: $streak;
@@ -42,20 +43,19 @@
     }
   }
 }
+.navbar-product-menu {
+  left: 40.5%;
+}
 .navbar-skin-menu {
-  right: 100px;
+  right: 12px;
   width: 31%;
 }
 .nav-item:hover .navbar-menu {
   opacity: 1;
   transform: translateY(-20px);
 }
-.nav-link, .navbar-logo {
+.nav-link {
   color: $white;
-  // ==============
-  color: $dark;
-  font-weight: bold;
-  // ==============
   &:hover {
     color: $white;
   }
@@ -71,6 +71,21 @@
 @include pad {
   .nav-item:hover .nav-link::before {
     width: 100%;
+  }
+  .nav-item .nav-link {
+    color: $dark;
+    font-weight: bold;
+  }
+  .nav-item:hover .nav-link {
+    color: $sgreen !important;
+  }
+  .navbar-scroll {
+    & .nav-item .nav-link {
+      color: $white;
+    }
+    & .nav-item:hover .nav-link {
+      color: $white !important;
+    }
   }
 }
 
@@ -132,9 +147,12 @@ button:focus {
   position: absolute;
   width: 30px;
   height: 5px;
-  background-color: $white;
+  background-color: $dark;
   border-radius: 10px;
   transition: .2s;
+}
+.navbar-scroll .toggler-bar {
+  background-color: $white;
 }
 .toggler-bar-top {
   top: 5px;

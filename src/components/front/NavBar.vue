@@ -3,21 +3,21 @@
   <nav :class="{ 'navbar-scroll': isMenuOpen || scrollHeader , 'bg-theme' : togglerBtn }" class="navbar navbar-expand-md py-0">
     <div class="container-fluid container-md align-items-center my-2 my-sm-4 my-md-0">
       <h1 class="h3 ml-5 ml-md-0">
-        <router-link :to="{ name: 'Home' }" class="navbar-logo">Sebamed</router-link>
+        <router-link :to="{ name: 'Home' }" class="navbar-logo fw-bold" :class="{ 'text-white' : togglerBtn }">Sebamed</router-link>
       </h1>
       <button class="navbar-toggler" @click="dropdownOpen('togglerBtn')" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <div class="position-relative">
-          <span class="toggler-bar toggler-bar-top" :class="{ 'toggler-bar-top-rotate' : togglerBtn}"></span>
+          <span class="toggler-bar toggler-bar-top" :class="{ 'toggler-bar-top-rotate' : togglerBtn, 'bg-white' : togglerBtn }"></span>
           <span class="toggler-bar toggler-bar-middle"></span>
-          <span class="toggler-bar toggler-bar-bottom" :class="{ 'toggler-bar-bottom-rotate' : togglerBtn}"></span>
+          <span class="toggler-bar toggler-bar-bottom" :class="{ 'toggler-bar-bottom-rotate' : togglerBtn, 'bg-white' : togglerBtn }"></span>
         </div>
       </button>
-      <div class="collapse navbar-collapse my-4" id="navbarNavDropdown">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item ms-2">
+          <li class="nav-item ms-2 py-4">
             <a class="nav-link" href="#">最新消息</a>
           </li>
-          <li class="nav-item ms-2">
+          <li class="nav-item ms-2 py-4">
             <a class="nav-link d-flex" @click="dropdownOpen('isProductDropdown')" href="#">
               <span>產品總覽</span>
               <span class="ms-1 arrowDown-pad d-none d-md-block"><i class="fas fa-chevron-down"></i></span>
@@ -34,7 +34,7 @@
               </li>
             </ul>
             <!-- 電腦版 -->
-            <ul class="navbar-menu bg-theme p-7 ms-3 d-none d-md-block">
+            <ul class="navbar-menu navbar-product-menu bg-theme p-7 ms-3 d-none d-md-block">
               <li class="mb-5">
                 <a href="#">[ 產品列表 ] 肌膚 你不知道的奧秘</a>
               </li>
@@ -43,10 +43,10 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item ms-2">
+          <li class="nav-item ms-2 py-4">
             <a class="nav-link" href="#">購買地點</a>
           </li>
-          <li class="nav-item ms-2">
+          <li class="nav-item ms-2 py-4">
             <a class="nav-link d-flex" @click="dropdownOpen('isSkinDropdown')" href="#">
               <span>美肌顧問</span>
               <span class="ms-1 arrowDown-pad d-none d-md-block"><i class="fas fa-chevron-down"></i></span>
@@ -72,7 +72,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item ms-2">
+          <li class="nav-item ms-2 py-4">
             <router-link to="/login" class="nav-link">
               <span>後台登入</span>
               <span class="ms-1"><i class="fas fa-sign-in-alt"></i></span>
@@ -120,7 +120,7 @@ export default {
       const scrollTop = $(window).scrollTop()
       const { routerName } = this
       switch (true) {
-        case routerName === 'Home' && scrollTop > 0:
+        case routerName === 'Home' && scrollTop > 50:
           window.addEventListener('scroll', vm.scrollPage)
           vm.scrollHeader = true
           break

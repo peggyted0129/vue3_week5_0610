@@ -4,7 +4,7 @@
     <!--- 商品卡片 --->
     <div class="row mt-9">
       <div class="col-md-3 mb-7" v-for="item in products" :key="item.id">
-        <a href="#" class="product-card">
+        <a href="#" class="product-card" @click.prevent="openModal(item)">
           <div class="card position-relative back-card-shadow border-0 card-radius">
             <div style="height: 253px; background-size: contain; background-position: center; background-repeat: no-repeat;"
               :style="{backgroundImage: `url(${item.imageUrl})`}">
@@ -25,14 +25,14 @@
               </div>
             </div>
             <div class="card-footer bg-light d-flex justify-content-center px-0 py-2">
-              <button type="button" class="btn border-end hvr-bounce-to-right py-2 px-0 w-50" @click="openModal(item)">
+              <button type="button" class="btn border-end btn-product-card hvr-bounce-to-right py-2 px-0 w-50">
                 <i class="fas fa-shopping-cart me-1"></i>
                 加到購物車
               </button>
-              <a href="#" class="btn hvr-icon-wobble-vertical py-2 px-0 w-50">
+              <button type="button" class="btn hvr-icon-wobble-vertical btn-product-card py-2 px-0 w-50">
                 <i class="fas fa-file-alt hvr-icon me-1"></i>
                 詳細資訊
-              </a>
+              </button>
             </div>
           </div>
         </a>
@@ -72,7 +72,6 @@ export default {
     openModal (item) {
       const vm = this
       console.log(item)
-      vm.$refs.userProductModal.openModal()
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/product/${item.id}`
       vm.$http.get(api).then((res) => {
         vm.product = res.data.product

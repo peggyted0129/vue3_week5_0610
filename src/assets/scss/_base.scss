@@ -55,3 +55,6 @@ ul,ol,li{
 .bg-fixed{
 	background-attachment: fixed;
 }
+.btn-close:focus {
+	box-shadow: none
+}

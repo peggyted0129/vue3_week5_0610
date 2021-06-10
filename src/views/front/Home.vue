@@ -100,10 +100,10 @@
                 <span>Science for healthy skin<br>美麗來自健康肌膚</span>
               </h2>
               <p class="h5 text-center">
-                我們相信美麗來自健康肌膚<br>
+                我們相信美麗來自健康肌膚 !<br>
                 堅持醫學皮膚護理的觀念，<br>
                 研發 pH5.5 的潔護膚產品，<br>
-                使用 Sebamed 超有安心感來回饋您的信賴。
+                使用 Sebamed 超有安心感。
               </p>
             </div>
           </div>

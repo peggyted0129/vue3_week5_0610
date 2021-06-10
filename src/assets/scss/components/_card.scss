@@ -22,3 +22,7 @@
     opacity: 1;
   }
 }
+.btn-product-card:focus {
+  outline: 0;
+  box-shadow: none;
+}
