@@ -24,11 +24,11 @@
               </div>
             </div>
             <div class="card-footer position-relative bg-light d-flex align-items-center p-7">
-              <button type="button" @click="addCart(item.id)" class="btn position-absolute add-cart-btn zindex-1 border-end btn-product-card hvr-bounce-to-right py-2 px-0 w-50">
+              <button type="button" @click="addCart(item.id)" class="btn position-absolute start-0 zindex-1 border-end btn-product-card hvr-bounce-to-right py-2 px-0 w-50">
                 <i class="fas fa-shopping-cart me-1"></i>
                 加到購物車
               </button>
-              <button type="button" class="btn position-absolute zindex-1 read-more-btn hvr-icon-wobble-vertical btn-product-card py-2 px-0 w-50">
+              <button type="button" class="btn position-absolute zindex-1 end-0 hvr-icon-wobble-vertical btn-product-card py-2 px-0 w-50">
                 <i class="fas fa-file-alt hvr-icon me-1"></i>
                 詳細資訊
               </button>
