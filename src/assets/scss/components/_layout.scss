@@ -68,6 +68,9 @@
     @include nav-hover;
   }
 }
+.navbar-scroll .nav-link::before {
+  background: $white;
+}
 @include pad {
   .nav-item:hover .nav-link::before {
     width: 100%;
